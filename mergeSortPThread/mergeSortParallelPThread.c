@@ -52,11 +52,16 @@ void mergeSortParallelPThread(int array[], int arraySize, int threadsNumber) {
 
 void mergeSortParallel(int array[], int arraySize, int bufferArray[], ThreadState* threads, int threadsNumber, pthread_mutex_t* myMutex) {
     /* if array is too small do mono-thread merge sort*/
+    
     if (arraySize < MULTITHREAD_THRESHOLD)
     {
         mergeSort(array, arraySize, bufferArray);
         return;
     }
+    
+    if (arraySize < 2) {
+        return;
+    }	
 
     /* if a thread is available get index */
     int threadIndex = -1;

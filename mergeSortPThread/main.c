@@ -9,6 +9,7 @@
 #include "../commonFunctions/commonFunctions.h"
 
 #define INIT_THREADS_NUMBER 4
+#define INIT_ARRAY_SIZE 10000
 
 int main(int argc, char* argv[]) {
     /*
@@ -19,26 +20,20 @@ int main(int argc, char* argv[]) {
      */
 
     printf("|-----Merge Sort Parallel using PThread-----|\n\n");
-
-    printf("Usage: %s < <inputFile> > <outputFile> <threadsNumber>\n", argv[0]);
-    printf("Usage: %s < <inputFile> <threadsNumber>\n\n", argv[0]);
-
+    
     /* Read optional parameter */
     int threadsNumber = INIT_THREADS_NUMBER; /* include main thread*/
-    if (argc != 1)
+    int arraySize = INIT_ARRAY_SIZE;
+    if (argc != 1) {
         threadsNumber = atoi(argv[1]);
+        arraySize = atoi(argv[2]);
+    }
     threadsNumber--; /*Main thread is not counted for PThread*/
-
-    /* Read size of array from stream */
-    int arraySize = 0;
-    scanf("%d", &arraySize);
-    printf("- Array size: %d\n", arraySize);
 
     /* Create array */
     int* array = allocateMemory(arraySize * sizeof(int));
 
-    /* Copy data from stream to array */
-    copyStreamToIntArray(array, arraySize);
+    randomizeIntArray(array, arraySize, 1, arraySize);
 
     /* Print the number of threads */
     printf("Number of threads: %d\n", threadsNumber + 1);
