@@ -1,0 +1,147 @@
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 1
+CPU and Wall time:
+- CPU time: 1.285511 seconds
+- Wall time: 1.289550 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+1
+1
+2
+3
+4
+...
+- Last 5 values: 
+9999997
+9999997
+9999998
+9999999
+10000000
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 2
+CPU and Wall time:
+- CPU time: 2.598395 seconds
+- Wall time: 1.357851 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+1
+2
+4
+4
+5
+...
+- Last 5 values: 
+19999995
+19999995
+19999997
+19999997
+19999999
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 4
+CPU and Wall time:
+- CPU time: 5.887159 seconds
+- Wall time: 2.040472 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+1
+1
+3
+4
+5
+...
+- Last 5 values: 
+39999997
+39999998
+39999999
+39999999
+40000000
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 8
+CPU and Wall time:
+- CPU time: 12.298826 seconds
+- Wall time: 2.487955 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+3
+4
+5
+6
+6
+...
+- Last 5 values: 
+79999998
+79999999
+79999999
+80000000
+80000000
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 16
+CPU and Wall time:
+- CPU time: 26.914155 seconds
+- Wall time: 3.453258 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+3
+4
+5
+5
+6
+...
+- Last 5 values: 
+159999994
+159999996
+159999998
+159999999
+160000000
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 32
+CPU and Wall time:
+- CPU time: 67.594690 seconds
+- Wall time: 6.690965 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+5
+5
+6
+8
+10
+...
+- Last 5 values: 
+319999994
+319999996
+319999996
+319999999
+319999999
+|-----Merge Sort Parallel using PThread-----|
+
+Number of threads: 64
+CPU and Wall time:
+- CPU time: 204.796608 seconds
+- Wall time: 14.764714 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+5
+8
+9
+10
+10
+...
+- Last 5 values: 
+639999997
+639999997
+639999998
+639999999
+639999999

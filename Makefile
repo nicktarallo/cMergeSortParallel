@@ -1,42 +1,29 @@
 CC=gcc
 CFLAGS= -std=c90 -W -Wall -ansi -pedantic  -O2
 #LDFLAGS=
-OPENMP_FLAGS= -fopenmp
 PTHREAD_FLAGS= -pthread
 OUTPUT_DIR=./buildMakeFile
 
 all:
-	$(MAKE) fileGen
-	$(MAKE) mergeSortSeq
-	$(MAKE) mergeSortParOpenMp
+#	$(MAKE) mergeSortSeq
 	$(MAKE) mergeSortParPThread
 	$(MAKE) clean
 
-fileGen:
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/fileGen fileGenerator/main.c
-
-mergeSortSeq:
-	$(MAKE) commonFuncs
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential.o -c mergeSortSequential/mergeSortSequential.c
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/main.o -c mergeSortSequential/main.c
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential $(OUTPUT_DIR)/mergeSortSequential.o $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/commonFunctions.o
-
-mergeSortParOpenMp:
-	$(MAKE) commonFuncs
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential.o -c mergeSortSequential/mergeSortSequential.c
-	$(CC) $(CFLAGS) $(OPENMP_FLAGS) -o $(OUTPUT_DIR)/mergeSortOpenMp.o -c mergeSortOpenMp/mergeSortParallelOpenMp.c
-	$(CC) $(CFLAGS) $(OPENMP_FLAGS) -o $(OUTPUT_DIR)/main.o -c mergeSortOpenMp/main.c
-	$(CC) $(CFLAGS) $(OPENMP_FLAGS) -o $(OUTPUT_DIR)/mergeSortOpenMp $(OUTPUT_DIR)/mergeSortOpenMp.o $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/commonFunctions.o $(OUTPUT_DIR)/mergeSortSequential.o
+#mergeSortSeq:
+# 	$(MAKE) commonFuncs
+#	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential.o -c mergeSortSequential/mergeSortSequential.c
+#	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/main.o -c mergeSortSequential/main.c
+#	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential $(OUTPUT_DIR)/mergeSortSequential.o $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/commonFunctions.o
 
 mergeSortParPThread:
 	$(MAKE) commonFuncs
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential.o -c mergeSortSequential/mergeSortSequential.c
-	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $(OUTPUT_DIR)/mergeSortPThread.o -c mergeSortPThread/mergeSortParallelPThread.c
-	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $(OUTPUT_DIR)/main.o -c mergeSortPThread/main.c
+	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/mergeSortSequential.o -c mergeSortSequential/Q2_mergeSortSequential.c
+	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $(OUTPUT_DIR)/mergeSortPThread.o -c mergeSortPThread/Q2_mergeSortParallelPThread.c
+	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $(OUTPUT_DIR)/main.o -c mergeSortPThread/Q2_main.c
 	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $(OUTPUT_DIR)/mergeSortPThread $(OUTPUT_DIR)/mergeSortPThread.o $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/commonFunctions.o $(OUTPUT_DIR)/mergeSortSequential.o
 
 commonFuncs:
-	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/commonFunctions.o -c commonFunctions/commonFunctions.c
+	$(CC) $(CFLAGS) -o $(OUTPUT_DIR)/commonFunctions.o -c commonFunctions/Q2_commonFunctions.c
 
 .PHONY: clean mrproper all
 

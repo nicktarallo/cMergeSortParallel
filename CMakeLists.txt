@@ -10,9 +10,6 @@ add_subdirectory(${PROJECT_NAME})
 project("mergeSortSequential")
 add_subdirectory(${PROJECT_NAME})
 
-project("mergeSortOpenMp")
-add_subdirectory(${PROJECT_NAME})
-
 project("mergeSortPThread")
 add_subdirectory(${PROJECT_NAME})
 

@@ -1,0 +1,48 @@
+|-----Merge Sort Parallel using PThread-----|
+
+Usage: ./mergeSortPThread < <inputFile> > <outputFile> <threadsNumber>
+Usage: ./mergeSortPThread < <inputFile> <threadsNumber>
+
+Number of threads: 1
+CPU and Wall time:
+- CPU time: 1.296873 seconds
+- Wall time: 1.299359 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+1
+1
+2
+3
+4
+...
+- Last 5 values: 
+9999997
+9999997
+9999998
+9999999
+10000000
+|-----Merge Sort Parallel using PThread-----|
+
+Usage: ./mergeSortPThread < <inputFile> > <outputFile> <threadsNumber>
+Usage: ./mergeSortPThread < <inputFile> <threadsNumber>
+
+Number of threads: 2
+CPU and Wall time:
+- CPU time: 2.630709 seconds
+- Wall time: 1.365943 seconds
+Is output array correctly sorted? Yes
+Array sorted: (Array too big to be printed completely)
+- First 5 values: 
+1
+2
+4
+4
+5
+...
+- Last 5 values: 
+19999995
+19999995
+19999997
+19999997
+19999999
